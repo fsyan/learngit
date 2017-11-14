@@ -62,7 +62,10 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
-       // LayoutInflater LayoutInflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater LayoutInflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+
+        //HelloWorld
     }
 
     @Override
