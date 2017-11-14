@@ -65,7 +65,7 @@ public class MainActivity extends BaseActivity {
         LayoutInflater LayoutInflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 
-        //HelloWorld
+        //HelloWorld   分支master
     }
 
     @Override
