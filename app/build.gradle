@@ -6,11 +6,9 @@ def getDate() {
     return formattedDate
 }
 def verCode = 14
-
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.1"
-
+    compileSdkVersion 22
+    buildToolsVersion "23.0.3"
     signingConfigs {
         signingConfig {
             keyAlias 'xxx'
@@ -22,8 +20,8 @@ android {
 
     defaultConfig {
         applicationId "com.fsy.demo"
-        minSdkVersion 19
-        targetSdkVersion 25
+        minSdkVersion 14
+        targetSdkVersion 22
         multiDexEnabled true
         versionCode verCode
         versionName APP_VERSION
@@ -33,7 +31,6 @@ android {
         buildConfigField 'String', 'API_SERVER_URL_MALL', RELEASE_API_SERVER_URL_MALL
         signingConfig signingConfigs.signingConfig
     }
-
     buildTypes {
         release {
             buildConfigField 'String', 'API_SERVER_URL', RELEASE_API_SERVER_URL
@@ -57,6 +54,7 @@ android {
     dexOptions {
         javaMaxHeapSize "2g"
     }
+
 
     //渠道Flavors，我这里写了一些常用的
     productFlavors {
@@ -83,7 +81,7 @@ android {
 
             if ("true".equals(IS_JENKINS)) {
                 timeNow = JENKINS_TIME
-                outDirectory = 'E:/Tomcat/webapps/jenkins/apk'
+                outDirectory = 'G:/Tomcat/webapps/jenkins/apk'
                 newName = 'yj-android-v' +
                         APP_VERSION + '-' + variant.productFlavors[0].name + timeNow + '-' + variant.buildType.name + '.apk'
             } else {
@@ -100,18 +98,4 @@ android {
 
         }
     }
-}
-
-dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:design:25.1.0'
-    compile 'junit:junit:4.12'
-    compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'com.squareup.okhttp3:okhttp:3.8.0'
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
-   // compile 'com.github.bumptech.glide:glide:4.3.1'
 }
